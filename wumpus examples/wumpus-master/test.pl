@@ -6,16 +6,11 @@
 
 %Set walls withput direction
 wall(X, Y) :-
-    X > 5; Y > 5; X < 1; Y < 1.
+    X > 5, Y > 5, X < 1, Y < 1.
 
 %Set Gold, Wumpus, PITs
-glint(3,3).
+glint(1,3).
 wumpus(1,2).
-
-
-pit(X, Y):-
-    false.
-
 pit(2,2).
 
 %Markers
@@ -34,36 +29,25 @@ pickup(X, Y) :-
 %set begin agent position (1,1)
 agent(1,1).
 
-%Safe position X,Y or not
-safe(X, Y) :-
-    \+wumpus(X,Y),
-    \+pit(X,Y),
-    \+breeze(X,Y),
-    \+stench(X,Y).
-
 %Actions that, agent can perform
 %action (CurrentX, CurrentY, NewX, NewY, Path, add path to the List)
 
-action(X, Y, X, NewY, List, [up|List]) :- 
+action(X, Y, X, NewY, List, [up|List]):- 
     Y < 3,
     NewY is Y + 1,
-    \+stench(X, NewY),
-    \+breeze(X, NewY).
+    \+wumpus(X, NewY).
 
 action(X, Y, X, NewY, List, [down|List]) :- 
     Y > 1,
-    NewY is Y - 1,
-    safe(X, NewY).
+    NewY is Y - 1.
 
 action(X, Y, NewX, Y, List, [right|List]) :- 
     X < 3,
-    NewX is X + 1,
-    safe(NewX, Y).
+    NewX is X + 1.
 
 action(X, Y, NewX, Y, List, [left|List]) :- 
     X > 1,
-    NewX is X - 1,
-    safe(NewX, Y).
+    NewX is X - 1.
 
 
 %Recursive query that find paths and write the steps into the list
