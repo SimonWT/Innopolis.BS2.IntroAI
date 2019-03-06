@@ -11,12 +11,11 @@ wall(X, Y) :-
 %Set Gold, Wumpus, PITs
 glint(3,3).
 wumpus(1,2).
+pit(2,2).
 
-
+%Set defaults, if we don't have objects on the map
 pit(X, Y):-
     false.
-
-pit(2,2).
 
 %Markers
 breeze(X, Y) :-
@@ -31,15 +30,19 @@ stench(X, Y ):-
 pickup(X, Y) :-
     glint(X, Y).
 
+%Check the Arrow
+hasArrow(Arrow):-
+    Arrow > 0.
+
 %set begin agent position (1,1)
 agent(1,1).
 
 %Safe position X,Y or not
 safe(X, Y) :-
     \+wumpus(X,Y),
-    \+pit(X,Y),
-    \+breeze(X,Y),
-    \+stench(X,Y).
+    \+pit(X,Y).
+    %\+breeze(X,Y),
+    %\+stench(X,Y).
 
 %Actions that, agent can perform
 %action (CurrentX, CurrentY, NewX, NewY, Path, add path to the List)
@@ -47,8 +50,7 @@ safe(X, Y) :-
 action(X, Y, X, NewY, List, [up|List]) :- 
     Y < 3,
     NewY is Y + 1,
-    \+stench(X, NewY),
-    \+breeze(X, NewY).
+    safe(X, NewY).
 
 action(X, Y, X, NewY, List, [down|List]) :- 
     Y > 1,
