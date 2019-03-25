@@ -68,11 +68,11 @@ for generation in range(num_generations):
     new_population = crossover(new_population, offspring_size=(num_pop, 512*512*3))
     mutations(new_population)
 
-# new_population[0:3, :] = parents
-# new_population[3:, :] = new_population
+new_population[:3] = parents[:]
+new_population[3:] = new_population[:3]
 
 result = new_population[fitness.index(min(fitness)),:]
 print(result)
-cv2.imwrite('img_result.jpg', result.reshape(dim[0], dim[1], dim[2]))
+cv2.imwrite('img_result.png', result.reshape(dim[0], dim[1], dim[2]))
 #cv2.imshow("image", result.reshape(dim[0], dim[1], dim[2]))
 #cv2.waitKey()
