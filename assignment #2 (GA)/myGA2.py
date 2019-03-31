@@ -3,6 +3,11 @@ import numpy.random as rm
 from heapq import nsmallest
 import cv2
 
+def getGradMatrix(goal, parents):
+    gradMatrix = np.copy(parents)
+    gradMatrix = parents - goal
+    normalized = np.vectorize(normalization)
+    return normalized(gradMatrix)
 
 def find_fitness(goal, pop):
     # Euclidian distance bw vectors
@@ -42,20 +47,27 @@ def select_parents(population, fitness, num_parents):
         parents = np.vstack((parents, population[i, :]))
     return parents
 
-def mutations(population, num_pop, step):
+def mutations(population, num_pop, gradMatrix, step):
     negative = 0 - step
     change_matrix = np.random.randint(negative, step, (num_pop, 512 * 512 * 3))
-    new_pop = population + change_matrix
+    new_pop = population + change_matrix * gradMatrix
     mod = np.vectorize(mod256)
     return mod(new_pop)
 
+def normalization(x):
+    if(x > 0):
+        return 1
+    elif(x == 0):
+        return 0
+    else:
+        return -1
 
 def mod256(x):
     return abs(x % 256)
 
 num_parents = 3
 num_pop = 6
-num_generations = 1280
+num_generations = 128
 
 im = cv2.imread("nav.png")
 
@@ -73,13 +85,15 @@ for generation in range(num_generations):
     print(generation, min(fitness), step)
     parents = select_parents(new_population, fitness, num_parents)
     crossovered = crossover(parents, offspring_size=(num_pop, 512 * 512 * 3))
-    mutated = mutations(crossovered, num_pop, step)
+    gradMatrix = getGradMatrix(goal, crossovered)
+    mutated = mutations(crossovered, num_pop, gradMatrix, step)
 
     new_population = parents[0, :]
     new_population = np.vstack((new_population, parents[1:(num_pop // 2), :]))
     new_population = np.vstack((new_population, mutated[(num_pop // 2):, :]))
-    if generation % 10 ==0 :
-        step = step - 1
+    if(step > 1):
+        step -= 1
+
 
 
 

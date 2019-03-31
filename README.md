@@ -1,1 +1,0 @@
-# Innopolis.BS2.IntroAI
