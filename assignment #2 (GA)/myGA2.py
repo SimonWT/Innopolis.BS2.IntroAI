@@ -13,10 +13,8 @@ def find_fitness(goal, pop):
     # Euclidian distance bw vectors
     fit = []
     for vec in pop:
-        # print(np.linalg.norm(goal - vec))
         fit.append(np.linalg.norm(goal - vec))
     return fit
-
 
 def crossover(parents, offspring_size):
     offspring = np.empty(offspring_size, int)
@@ -70,7 +68,6 @@ num_pop = 6
 num_generations = 128
 
 im = cv2.imread("nav.png")
-
 dim = im.shape
 goal = im.reshape(dim[0] * dim[1] * dim[2])
 

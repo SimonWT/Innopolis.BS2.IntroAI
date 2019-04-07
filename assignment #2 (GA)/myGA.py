@@ -57,13 +57,12 @@ num_parents = 3
 num_pop = 6
 num_generations = 1280
 
-im = cv2.imread("nav.png")
+im = cv2.imread("sima.jpg")
 
 dim = im.shape
 goal = im.reshape(dim[0] * dim[1] * dim[2])
 
-im2 = cv2.imread("img.png")
-init = im2.reshape(dim[0] * dim[1] * dim[2])
+init = np.full((512,512,512), 255)
 
 new_population = np.array([init, init, init, init, init, init])
 
