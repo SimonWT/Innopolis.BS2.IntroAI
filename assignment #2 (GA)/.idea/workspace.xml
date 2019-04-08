@@ -3,15 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="3d7f4f6d-2254-4828-984e-6a563d2552ae" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/228.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/321321.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/321321.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img_result4.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/img.png" afterPath="" />
       <change beforePath="$PROJECT_DIR$/myGA3.py" afterPath="$PROJECT_DIR$/myGA3.py" />
-      <change beforePath="$PROJECT_DIR$/nav.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ricardo.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/sima.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/sima_wall.jpg" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,11 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="myGA3.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="myGA3.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/myGA3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <state relative-caret-position="323">
+              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -40,17 +33,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="result-321321.jpg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/results/result-321321.jpg">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Result.jpg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Result.jpg">
-          <provider selected="true" editor-type-id="images">
-            <state />
+      <file leaf-file-name="requirements.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/requirements.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="23" lean-forward="false" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
@@ -72,6 +61,7 @@
         <option value="$PROJECT_DIR$/../../Lab/test.py" />
         <option value="$PROJECT_DIR$/myGA2.py" />
         <option value="$PROJECT_DIR$/myGA.py" />
+        <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/myGA3.py" />
       </list>
     </option>
@@ -110,16 +100,6 @@
               <item name="assignment #2 (GA)" type="b2602c69:ProjectViewProjectNode" />
               <item name="assignment #2 (GA)" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="assignment #2 (GA)" type="b2602c69:ProjectViewProjectNode" />
-              <item name="assignment #2 (GA)" type="462c0819:PsiDirectoryNode" />
-              <item name="results" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="assignment #2 (GA)" type="b2602c69:ProjectViewProjectNode" />
-              <item name="assignment #2 (GA)" type="462c0819:PsiDirectoryNode" />
-              <item name="targets" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -135,6 +115,9 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\simon\Documents\INNOPOLIS\BS2\IAI\assignments\assignment #2 (GA)\targets" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\simon\Documents\INNOPOLIS\BS2\IAI\assignments\assignment #2 (GA)\results" />
       <recent name="C:\Users\simon\Documents\INNOPOLIS\BS2\IAI\assignments\assignment #2 (GA)" />
@@ -265,20 +248,26 @@
       <option name="project" value="LOCAL" />
       <updated>1554714008931</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="run file from command line + pass arguments">
+      <created>1554722536905</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1554722536905</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2987013" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2987013" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26332623" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26332623" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -326,7 +315,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="pre release" />
-    <option name="LAST_COMMIT_MESSAGE" value="pre release" />
+    <MESSAGE value="run file from command line + pass arguments" />
+    <option name="LAST_COMMIT_MESSAGE" value="run file from command line + pass arguments" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -625,19 +615,27 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Result.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/myGA3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state relative-caret-position="323">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="23" lean-forward="false" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Result.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
   </component>

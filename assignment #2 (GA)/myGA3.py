@@ -6,7 +6,8 @@ import argparse
 
 # Run this myGA3.py by terminal with 'python myGA3.py -gen <Number of generations>
 #                                                     -img "<Path to target image>"
-#                                                      -area <Start area of the figures> -colors <range of colors 0-255>
+#                                                      -area <Start area of the figures>
+#                                                      -colors <range of colors 0-255>
 #                                                      -outname "<path to program output + name>" '
 
 parser = argparse.ArgumentParser()
