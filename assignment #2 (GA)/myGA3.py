@@ -7,7 +7,8 @@ num_parents = 3
 num_pop = 6
 num_generations = 100000
 color_range = 255
-max_point_range = 35
+max_point_range = 20
+
 
 
 def gen_poly(high):
@@ -25,7 +26,6 @@ def gen_poly(high):
     elif y_max == y_0 or y_max < y_0 :
         y_max += y_0 + 1
 
-    # print(x_max, y_max)
     return np.array([[[x_0, y_0],
                       [rm.randint(x_0, x_max), rm.randint(y_0, y_max )],
                       [rm.randint(x_0, x_max), rm.randint(y_0, y_max )],
@@ -50,7 +50,7 @@ def select_parents(population, fitness, num_parents):
 
     smallest_vectors_i = list(map(fitness.index, nsmallest(num_parents, fitness)))
     smallest_vectors_i.pop(0)
-    # print(smallest_vectors_i)
+
     for i in smallest_vectors_i:
         parents = np.vstack((parents, population[i, :]))
     return parents
@@ -59,7 +59,6 @@ def select_parents(population, fitness, num_parents):
 def crossover(parents, offspring_size):
     offspring = np.copy(parents)
     offspring = np.vstack((offspring, parents))
-    # offspring = np.vstack((offspring, offspring))
 
     return offspring
 
@@ -70,15 +69,13 @@ def mutations(population, point_range, color_range):
         img = vec.reshape(dim[0], dim[1], dim[2])
         cv2.fillPoly(img, gen_poly( point_range), gen_color(0, color_range))
         mutated = np.vstack((mutated, img.reshape(dim[0] * dim[1] * dim[2])))
-
     return population
 
-im = cv2.imread("ricardo.png")
+im = cv2.imread("klimt-the-kiss.jpg")
 dim = im.shape
 goal = im.reshape(dim[0] * dim[1] * dim[2])
 
 init = np.full((512*512*3), 255)
-
 new_population = np.array([init, init, init, init, init, init])
 
 point_range = max_point_range
@@ -86,11 +83,9 @@ for generation in range(num_generations):
     fitness = find_fitness(goal, new_population)
     print(generation, min(fitness), point_range)
     parents = select_parents(new_population, fitness, num_parents)
-    # print(parents.shape[0])
     crossovered = crossover(parents, offspring_size=(num_pop, 512 * 512 * 3))
-    # print(crossovered.shape[0])
     mutated = mutations(crossovered, point_range, color_range)
-    # print(mutated.shape[0])
+
 
     new_population = parents[0, :]
     new_population = np.vstack((new_population, parents[1:(num_pop // 2), :]))
@@ -105,7 +100,5 @@ for generation in range(num_generations):
     if(generation % 100 ==0 ):
         cv2.imwrite("Result.jpg", result.reshape(dim[0], dim[1], dim[2]))
 
-# cv2.fillPoly(im2, gen_poly(1,100), gen_color(100,255))
-
 cv2.imwrite("Result.jpg", result.reshape(dim[0], dim[1], dim[2]))
-# cv2.waitKey()
+
