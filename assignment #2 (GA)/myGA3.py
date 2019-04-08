@@ -2,13 +2,28 @@ import numpy as np
 import numpy.random as rm
 from heapq import nsmallest
 import cv2
+import argparse
+
+# Run this myGA3.py by terminal with 'python myGA3.py -gen <Number of generations>
+#                                                     -img "<Path to target image>"
+#                                                      -area <Start area of the figures> -colors <range of colors 0-255>
+#                                                      -outname "<path to program output + name>" '
+
+parser = argparse.ArgumentParser()
+parser.add_argument("-gens", type=int)
+parser.add_argument("-img", type=str)
+parser.add_argument("-area", type=int)
+parser.add_argument("-colors", type=int)
+parser.add_argument("-outname", type=str)
+parser = parser.parse_args()
 
 num_parents = 3
 num_pop = 6
-num_generations = 100000
-color_range = 255
-max_point_range = 20
-
+num_generations = parser.gens
+color_range = parser.colors
+max_point_range = parser.area
+target_path = parser.img
+result_path =parser.outname
 
 
 def gen_poly(high):
@@ -71,7 +86,7 @@ def mutations(population, point_range, color_range):
         mutated = np.vstack((mutated, img.reshape(dim[0] * dim[1] * dim[2])))
     return population
 
-im = cv2.imread("klimt-the-kiss.jpg")
+im = cv2.imread(target_path)
 dim = im.shape
 goal = im.reshape(dim[0] * dim[1] * dim[2])
 
@@ -98,7 +113,7 @@ for generation in range(num_generations):
         point_range = 1
 
     if(generation % 100 ==0 ):
-        cv2.imwrite("Result.jpg", result.reshape(dim[0], dim[1], dim[2]))
+        cv2.imwrite(result_path, result.reshape(dim[0], dim[1], dim[2]))
 
-cv2.imwrite("Result.jpg", result.reshape(dim[0], dim[1], dim[2]))
+cv2.imwrite(result_path, result.reshape(dim[0], dim[1], dim[2]))
 
